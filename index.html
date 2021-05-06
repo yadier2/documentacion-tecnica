@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentación técnica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>Documentación Git</header>
+    <ul>
+      <li><a class="nav-link" href="#Introduccion">Introduccion</a></li>
+      <li>
+        <a class="nav-link" href="#Caracteristicas">Caracteristicas</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#Ordenes_basicas">Ordenes basicas</a>
+      </li>
+      <li><a class="nav-link" href="#Flujo_de_trabajo">Flujo de trabajo</a></li>
+      <li><a class="nav-link" href="#Instalacion">Instalacion</a></li>
+      <li>
+        <a class="nav-link" href="#Crea_un_repositorio">Crea un repositorio</a>
+      </li>
+      <li><a class="nav-link" href="#Guardar_Cambios">Guardar Cambios</a></li>
+      <li><a class="nav-link" href="#Borrar_Cambios">Borrar Cambios</a></li>
+      <li><a class="nav-link" href="#Flujo_de_GitHub">Flujo de GitHub</a></li>
+      
+      <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduccion">
+      <header>Introduccion</header>
+      <article>
+        <p>
+          Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia, la
+          confiabilidad y compatibilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran
+          número de archivos de código fuente. Su propósito es llevar registro de los cambios en archivos de computadora
+          incluyendo coordinar el trabajo que varias personas realizan sobre archivos compartidos en un repositorio de
+          código.
+        </p>
+
+        <p>
+          Con Git vamos a poder trabajar en equipo de una manera muy sencilla y optimizada, de forma que si tenemos dos
+          o tres personas trabajando en ciertas funcionalidades del proyecto y nosotros podemos estar trabajando en
+          nuestra parte del código. Cuando acabamos de desarrollar nuestro código, utilizamos Git para mezclar los
+          cambios con los otros compañeros. De forma que el código se mezcla de manera perfecta sin generar ningún tipo
+          de fallo y de forma rápida.
+        </p>
+        <p>
+          También nos va a proporcionar un listado de los cambios (commits) y podemos volver atrás en el tiempo a
+          cualquiera de esos cambios o commits.
+        </p>
+        <p>
+          Además tendremos la posibilidad de trabajar con ramas de desarrollo, que nos van a permitir desarrollar cosas
+          que divergen mucho del programa principal.
+        </p>
+        <p>
+          Git es una herramienta imprescindible para cualquier desarrollador en la actualidad.
+          En resumen las ventajas que ofrece son:
+        </p>
+        <ul>
+          <li>Trabajo en equipo.</li>
+          <li>Mayor autonomía.</li>
+          <li>Estructura en árbol.</li>
+          <li>Es un sistema escalable</li>
+          <li>Colaboración</li>
+          <li>Es software libre y open source.</li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Caracteristicas">
+      <header>Caracteristicas</header>
+      <article>
+        <p>
+          El diseño de Git mantiene una enorme cantidad de código distribuida y gestionada por mucha gente, que incide
+          en numerosos detalles de rendimiento, y de la necesidad de rapidez en una primera implementación.
+        </p>
+        <p>
+          Entre las características más relevantes se encuentran:
+        </p>
+        <ul>
+          <li>Fuerte apoyo al desarrollo no lineal, por ende rapidez en la gestión de ramas y mezclado de diferentes
+            versiones. </li>
+          <li>Gestión distribuida. Al igual que Darcs, BitKeeper, Mercurial, SVK, Bazaar y Monotone, Git le da a cada
+            programador una copia local del historial del desarrollo entero, y los cambios se propagan entre los
+            repositorios locales.</li>
+          <li>Los almacenes de información pueden publicarse por HTTP, FTP, rsync o mediante un protocolo nativo, ya sea
+            a través de una conexión TCP/IP simple o a través de cifrado SSH. </li>
+          <li>Realmacenamiento periódico en paquetes (ficheros). Esto es relativamente eficiente para escritura de
+            cambios y relativamente ineficiente para lectura si el reempaquetado (con base en diferencias) no ocurre
+            cada cierto tiempo.
+            e</li>
+          <li> Compatibilidad con Github y Microsoft Visual Studio Cod</li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Ordenes_basicas">
+      <header>Ordenes basicas</header>
+      <article>
+        <code>git init</code>
+        Esto crea un subdirectorio nuevo llamado .git, el cual contiene todos los archivos necesarios del repositorio –
+        un esqueleto de un repositorio de Git. Todavía no hay nada en tu proyecto que esté bajo seguimiento.
+
+        <code>git fetch</code>
+        Descarga los cambios realizados en el repositorio remoto.
+
+        <code>git merge &lt;nombre_rama&gt; </code>
+        Impacta en la rama en la que te encuentras parado, los cambios realizados en la rama “nombre_rama”.
+
+        <code>git pull</code>
+        Unifica los comandos fetch y merge en un único comando.
+
+        <code>git status</code>
+        Muestra el estado actual de la rama, como los cambios que hay sin commitear.
+
+        <code>git add &lt;nombre_archivo&gt;</code>
+        Comienza a trackear el archivo “nombre_archivo”.
+
+        <code>git commit -m "&lt;mensaje&gt;"</code>
+        Confirma los cambios realizados. El “mensaje” generalmente se usa para asociar al commit una breve descripción
+        de los cambios realizados.
+
+        <code>git push origin &lt;nombre_rama&gt;</code>
+        Sube la rama “nombre_rama” al servidor remoto.
+
+        <code>git checkout -b &lt;nombre_rama_nueva&gt;</code>
+        Crea una rama a partir de la que te encuentres parado con el nombre “nombre_rama_nueva”, y luego salta sobre la
+        rama nueva, por lo que quedas parado en esta última.
+
+        <code>git checkout -t origin/&lt;nombre_rama&gt;</code>
+        Si existe una rama remota de nombre “nombre_rama”, al ejecutar este comando se crea una rama local con el nombre
+        “nombre_rama” para hacer un seguimiento de la rama remota con el mismo nombre.
+
+        <code>git branch</code>
+        Lista todas las ramas locales.
+
+        <code>git branch -a</code>
+        Lista todas las ramas locales y remotas.
+
+        <code>git branch -d &lt;nombre_rama&gt;</code>
+        Elimina la rama local con el nombre “nombre_rama”.
+
+        <code>git remote prune origin</code>
+        Actualiza tu repositorio remoto en caso que algún otro desarrollador haya eliminado alguna rama remota.
+
+        <code>git reset --hard HEAD</code>
+        Elimina los cambios realizados que aún no se hayan hecho commit.
+
+        <code>git revert &lt;hash_commit&gt;</code>
+        Revierte el commit realizado, identificado por el “hash_commit”.
+      </article>
+    </section>
+    <section class="main-section" id="Flujo_de_trabajo">
+      <header>Flujo de trabajo</header>
+      <article>
+        <p>Git plantea una gran libertad en la forma de trabajar en torno a un proyecto. Sin embargo, para coordinar el
+          trabajo de un grupo de personas en torno a un proyecto es necesario acordar como se va a trabajar con Git.</p>
+        <p>A estos acuerdos se les llama flujo de trabajo. Un flujo de trabajo de Git es una recomendación acerca del
+          uso de Git para realizar trabajo de forma uniforme y productiva. </p>
+        <p>Los flujos de trabajo más populares son git-flow, GitHub-flow, GitLab Flow y One Flow.</p>
+
+        <h3>Git-Flow</h3>
+        <p>
+          Creado en 2010 por Vincent Driessen.​ Es el flujo de trabajo más conocido. Está pensado para aquellos
+          proyectos que tienen entregables y ciclos de desarrollo bien definidos.
+        </p>
+  
+          <h3>GitHub-Flow</h3>
+      
+        <p>Creado en 2011 por GitHub y es la forma de trabajo sugerida por las funcionalidades propias de GitHub . Está
+          centrado en un modelo de desarrollo iterativo y de despliegue constante. </p>
+        <p> GitHub intenta simplificar la gestión de ramas, trabajando directamente sobre la rama master y generando
+          integrando las distintas features directamente a esta rama.</p>
+
+      </article>
+    </section>
+
+    <section class="main-section" id="Instalacion">
+      <header>Instalacion</header>
+      <article>
+        <h3>Instalación de Git en Windows</h3>
+        <ol>
+          <li>Descárgate el <a href="https://gitforwindows.org/" target="_blank">instalador de Git para Windows</a> más
+            reciente.</li>
+          <li>Cuando hayas iniciado correctamente el instalador, deberías ver la pantalla del asistente de
+            <strong>configuración de Git</strong>. Selecciona las opciones <strong>Next</strong> (Siguiente) y
+            <strong>Finish </strong>(Finalizar) para completar la instalación. Las opciones predeterminadas son las más
+            lógicas en la mayoría de los casos.</li>
+          <li>Abre el símbolo del sistema (o Git Bash si durante la instalación seleccionaste no usar Git desde el
+            símbolo del sistema de Windows).</li>
+          <li>Ejecuta los siguientes comandos para configurar tu nombre de usuario y dirección de correo electrónico de
+            Git; sustituye el nombre de Emma por el tuyo. Esta información se asociará a todas las confirmaciones que
+            crees:
+          </li>
+          <code>git config --global user.name "John Smith" </code>
+          <code>git config --global user.email "eparis@atlassian.com"</code>
+        </ol>
+
+      </article>
+    </section>
+
+    <section class="main-section" id="Crea_un_repositorio">
+      <header>Crea un repositorio</header>
+      <article>
+        Un repositorio de Git es un almacenamiento virtual de tu proyecto. Te permite guardar versiones del código a las
+        que puedes acceder cuando lo necesites.
+        <p>Para crear un nuevo repositorio, usa el comando git init. git init es un comando que se utiliza una sola vez
+          durante la configuración inicial de un repositorio nuevo. </p>
+        <code>git init</code>
+
+        <p>
+          El comando git clone se usa para crear una copia o clonar un repositorio remoto. Se utiliza git clone con la
+          URL de un repositorio.
+        </p>
+        <code>git clone &lt;url&gt;</code>
+      </article>
+    </section>
+
+    <section class="main-section" id="Guardar_Cambios">
+      <header>Guardar Cambios</header>
+      <article>
+        Ahora que has iniciado o clonado un repositorio, puedes realizar commits en la versión del archivo.
+
+        <p>Crea un archivo nuevo Mascotas.txt con el contenido "Git tutorial " </p>
+        <p>Ejecuta el comando git add para añadir Mascotas.txt al área de preparación del repositorio</p>
+        <code>git add Mascotas.txt </code>
+
+        <p>Crea un commit nuevo con un mensaje que describa qué trabajo se ha hecho en el commit</p>
+        <code>git commit -m "agregado Mascotas.txt al repositorio"</code>
+
+        <h3>Configurando el repositorio remoto</h3>
+        <p>Si has usado el comando git init para crear un repositorio nuevo, entonces no tendrás ningún repositorio
+          remoto al cual enviar cambios.</p>
+        <p>deberás añadir una URL de repositorio remoto a tu git config local y configurar una rama de nivel superior
+          para tus ramas locales. El comando git remote te ofrece tal utilidad.</p>
+        <code>git remote add &lt;remote_name&gt; &lt;remote_repo_url&gt; </code>
+        <code>git remote add origin https://github.com/yadier2/pp.git</code>
+        <p> Una vez asignado el repositorio remoto, puedes enviar ramas locales ahí.</p>
+        <code>git push -u &lt;remote_name&gt; &lt;local_branch_name&gt; </code>
+        <code>git push -u origin main </code>
+      </article>
+    </section>
+
+    <section class="main-section" id="Borrar_Cambios">
+      <header>Borrar Cambios</header>
+      <article>
+        Al deshacer una acción en Git, normalmente retrocedes en el tiempo o a otro cronograma en el que no se
+        produjeron errores.
+        <p>Utiliza el comando git log para pasar una lista de las confirmaciones más recientes</p>
+        <code>git log</code>
+        <p>Cada confirmación tiene un hash SHA-1 de identificación único. Estos ID se emplean para desplazarse por el
+          cronograma confirmado y revisar las confirmaciones.</p>
+
+        <p>
+          Al utilizar el comando git checkout, podemos comprobar la confirmación anterior, a1e8fb3, poniendo el
+          repositorio en un estado anterior a que tuviera lugar la locura.
+        </p>
+        <p> Puedes hacer un revert de tus cambios indicando el commit que quieres deshacer.</p>
+        <p>Esto creará un nuevo commit que deshará todos los cambios de ese commit en concreto.</p>
+        <code>git revert a1e8fb3</code>
+
+        <h3>Eliminar una rama de manera local</h3>
+        <p>
+          Para eliminar una rama de manera local en nuestra copia del repositorio utilizaremos el comando git branch con
+          la opción -d (--delete)
+          <code>
+             git branch -d &lt;nombre_de_la_rama&gt;
+           </code>
+
+      </article>
+    </section>
+    <section class="main-section" id="Flujo_de_GitHub">
+      <header>Flujo de GitHub</header> 
+      <article>
+        <p>En GitHub, utilizamos nuestros productos todos los días y hemos desarrollado un flujo de trabajo para
+          colaborar en proyectos. Para hacer que funcione para equipos, independientemente de su tamaño o conocimiento
+          técnico, nos aseguramos de que cada paso de nuestro flujo de trabajo se pueda completar dentro de la interfaz
+          con base en la web. </p>
+        Seguir el flujo de GitHub
+        <ol>
+          <li>Crea una rama de un repositorio.</li>
+          <li>Crea, edita, renombra, mueve o elimina archivos.</li>
+          <li>Envía una solicitud de extracción desde tu rama con tus modificaciones propuestas para iniciar un debate.
+          </li>
+          <li> Realiza modificaciones en tu rama, según sea necesario. Tu solicitud de extracción se actualizará de
+            manera automática.</li>
+          <li> Fusiona la solicitud de extracción una vez que la rama esté lista para ser fusionada.
+            Organiza tus ramas utilizando el botón de eliminación de la solicitud de extracción o en la página de ramas.
+          </li>
+
+        </ol>
+      </article>
+    </section>
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <article>
+        <ul>
+          <li>
+            Toda la documentación de esta página está extraída de
+            <a
+              href="https://git-scm.com/docs"
+              target="_blank"
+              >Git</a
+            >
+           
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+
+</html>
